@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 25px;
+  background: black; /* Optional for a more app-like appearance */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  background: black;
+  border-radius: 50px;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 563px;
+  height: auto;
+}
+
+.value {
+  font-size: 8vw; /* Responsive font size */
+  font-weight: 300;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.buttons-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.button {
+  align-items: center;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  font-size: 4vw; /* Responsive button font size */
+  justify-content: center;
+  transition: filter .3s;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.button.number-0 {
+  border-radius: 30px;
+  grid-column: 1 / span 2;
+  justify-content: flex-start;
+  padding-left: 43px;
+}
+
+.button.function {
+  color: black;
+  background: #a5a5a5;
+}
+
+.button.operator {
+  background: #f1a33c;
+}
+
+.button:active,
+.button:focus {
+  filter: brightness(120%);
+}
+
+.bottom {
+  width: 200px;
+  height: 5px;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Media Queries for Smaller Devices */
+@media screen and (max-width: 768px) {
+  .calculator {
+    padding: 5px 10px;
+    border-radius: 30px;
+  }
+
+  .value {
+    font-size: 20vw;
+    padding: 5px;
+    margin-bottom: 30px;
+    line-height: .9;
+
+  }
+
+  .button {
+    font-size: 5vw;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .button.number-0 {
+    font-size: 4vw;
+    padding-left: 20px;
+    padding-right: 0px;
+    border-radius: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .calculator {
+    position: fixed;
+    padding: 0 20px;
+    margin: -50px px; 
+    border-radius: 20px;
+  }
+
+  .value {
+    font-family: "Poppins", sans-serif;
+    font-weight: thin;
+    font-size: 15.8vw;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+
+  .button {
+    font-size: 8vw;
+    margin-top: -4px;
+    padding: -10px 0;
+  }
+
+  .button.number-0 {
+    padding-left: 25px;
+  }
+}
